@@ -18,27 +18,27 @@ angular.module('zyringApp')
     $scope.cities = [
       {
         name: 'Seattle',
-        img-url: 'http://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg'
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg'
       },
       {
         name: 'Redmond',
-        img-url: 'http://upload.wikimedia.org/wikipedia/commons/1/16/Bicycle_Capital_of_the_Northwest.JPG'
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/1/16/Bicycle_Capital_of_the_Northwest.JPG'
       },
       {
         name: 'Bellevue',
-        img-url: 'http://upload.wikimedia.org/wikipedia/commons/2/21/Aerial_Bellevue_Washington_November_2011.jpg'
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/2/21/Aerial_Bellevue_Washington_November_2011.jpg'
       },
       {
         name: 'Kirkland',
-        img-url: 'http://upload.wikimedia.org/wikipedia/commons/7/71/Kirkland_waterfront.jpg'
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/7/71/Kirkland_waterfront.jpg'
       },
       {
         name: 'Tacoma',
-        img-url: 'http://upload.wikimedia.org/wikipedia/commons/0/01/Mount_Rainier_over_Tacoma.jpg'
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/0/01/Mount_Rainier_over_Tacoma.jpg'
       },
       {
         name: 'Olympia',
-        img-url: 'http://upload.wikimedia.org/wikipedia/commons/b/b7/Olympia,_Washington_-_Capital_Lake_Boardwalk.jpg'
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/b/b7/Olympia,_Washington_-_Capital_Lake_Boardwalk.jpg'
       }
     ];
 
