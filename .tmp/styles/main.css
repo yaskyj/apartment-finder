@@ -1,0 +1,38 @@
+* {
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+hr {
+}
+
+.pic {
+  border: 10px solid #fff;  
+  float: left;
+  width: 500px;
+  height: 375px;
+  margin: 20px;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px #111;
+}
+
+.pic img {
+  width: 500px;
+  height: 375px;
+  transition: all 1s ease;
+}
+
+.pic img:hover {
+  -webkit-transform:scale(1.5);
+  transform:scale(1.5);
+}
+
+.cities {
+  float: left;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 25px;  
+}

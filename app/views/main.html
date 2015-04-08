@@ -2,13 +2,25 @@
 <h3 style="text-align: center">This is the your main html file</h3> -->
 <div class="container">
   <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Where do you want to look for apartments?</h1>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
     <ul style="list-style-type: none">
-        <li ng-repeat="city in cities" class="col-md-6">
-          <img ng-src="{{city.imgUrl}}" width="400"/> 
-          <br>
-          {{city.name}}
-          <br>
-          <br>
+        <li ng-repeat="city in cities">
+          <div class="col-md-6 cities">
+            <div class="pic">
+              <img ng-src="{{city.imgUrl}}"/> 
+            </div>
+            <br>
+            <div class="name">
+              {{city.name}}
+            </div>
+            <br>
+            <br>
+          </div>
         </li>
     </ul>
   </div>
