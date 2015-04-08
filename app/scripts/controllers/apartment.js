@@ -8,10 +8,7 @@
  * Controller of the zyringApp
  */
 angular.module('zyringApp')
-  .controller('CityCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ApartmentCtrl', ['$scope', '$routeParams'],
+  function($scope, $routeParams) {
+    var cityName = $routeParams.cityName;
   });
