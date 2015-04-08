@@ -2,11 +2,16 @@
 
 /**
  * @ngdoc function
- * @name zyringApp.controller:MainCtrl
+ * @name zyringApp.controller:AboutCtrl
  * @description
- * # MainCtrl
+ * # AboutCtrl
  * Controller of the zyringApp
  */
 angular.module('zyringApp')
   .controller('CityCtrl', function ($scope) {
-});
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  });
