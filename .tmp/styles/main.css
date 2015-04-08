@@ -13,12 +13,14 @@ hr {
   height: 375px;
   margin: 20px;
   overflow: hidden;
+  position: relative;
   box-shadow: 5px 5px 5px #111;
 }
 
 .pic img {
   width: 500px;
   height: 375px;
+  position: absolute;
   transition: all 1s ease;
 }
 
@@ -32,7 +34,8 @@ hr {
 }
 
 .name {
+  position: absolute;
   font-weight: bold;
   font-size: 1.5em;
-  padding: 25px;  
+  z-index: 10;
 }
