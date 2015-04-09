@@ -43,12 +43,19 @@ hr {
   float: left;
 }
 
-.name {
+.name-box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 1px solid white;
   font-weight: bold;
+  height: 60px;
+  width: 200px;
   font-size: 2em;
   z-index: 10;
+}
+
+.name {
+  text-align: center;
 }
