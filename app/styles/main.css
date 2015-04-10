@@ -24,20 +24,7 @@ hr {
   width: 500px;
   height: 375px;
   position: absolute;
-/*  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;*/
 }
-
-/*.pic img:hover {
-  -webkit-transform:scale(1.5);
-  -moz-transform:scale(1.5);
-  -ms-transform:scale(1.5);
-  -o-transform:scale(1.5);
-  transform:scale(1.5);
-}*/
 
 .cities {
   float: left;
@@ -68,7 +55,3 @@ hr {
   -moz-border-radius:    0;
   border-radius:         0;
 }
-
-/*.name {
-  text-align: center;
-}*/
