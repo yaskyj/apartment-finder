@@ -21,13 +21,20 @@ hr {
   width: 500px;
   height: 375px;
   position: absolute;
-  transition: all 1s ease;
+/*  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;*/
 }
 
-.pic img:hover {
+/*.pic img:hover {
   -webkit-transform:scale(1.5);
+  -moz-transform:scale(1.5);
+  -ms-transform:scale(1.5);
+  -o-transform:scale(1.5);
   transform:scale(1.5);
-}
+}*/
 
 .cities {
   float: left;
@@ -39,14 +46,21 @@ hr {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  border: 1px solid white;
-  font-weight: bold;
-  height: 60px;
-  width: 200px;
-  font-size: 2em;
   z-index: 10;
 }
 
-.name {
-  text-align: center;
+.ghost-btn {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #F2F2F2;
+  border: 1px solid white;
+  height: 60px;
+  width: 200px;
+  font-weight: bold;
+  font-size: 2em;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+  border-radius:         0;
 }
+
+/*.name {
+  text-align: center;
+}*/
