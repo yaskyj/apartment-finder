@@ -1,6 +1,14 @@
 <div class="container">
   <div class="row">
-    <ul >
+    <ul class="picture-list">
+      <li ng-repeat="apt in apartmentList">
+        <div class="col-md-4 apartment">
+          <div class="apartment-pic">
+            <img ng-src="{{apt.thumbnail}}"/>
+          </div>
+          <a href="#">{{apt.title}}</a>
+        </div>
+      </li>
     </ul>
 <!--     <div class="col-md-12">
       <h2>City: {{cityName}}</h2>
