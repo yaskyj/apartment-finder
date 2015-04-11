@@ -2,11 +2,20 @@
   <div class="row">
     <ul class="picture-list">
       <li ng-repeat="apt in apartmentList">
-        <div class="col-md-4 apartment">
-          <div class="apartment-pic">
-            <img ng-src="{{apt.thumbnail}}"/>
+        <div class="col-md-4">
+          <div class="apartment">
+            <div class="apartment-pic">
+              <img ng-src="{{apt.thumbnail}}"/>
+              <div class="apartment-info">
+              </div>
+            </div>
+            <div class="apartment-text">
+              <a href="#">{{apt.title}}</a>
+              <div class="apartment-address">
+                {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
+              </div>
+            </div>
           </div>
-          <a href="#">{{apt.title}}</a>
         </div>
       </li>
     </ul>
