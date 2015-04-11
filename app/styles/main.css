@@ -5,9 +5,9 @@
   box-sizing: border-box;
 }
 
-hr {
+.picture-list {
+  list-style-type: none;
 }
-
 .pic {
   border: 10px solid #fff;  
   float: left;
