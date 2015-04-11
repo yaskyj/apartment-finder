@@ -8,7 +8,8 @@
  * Controller of the zyringApp
  */
 angular.module('zyringApp')
-  .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment'
+  .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment',
     function($scope, $routeParams, Apartment) {
       $scope.cityName = $routeParams.cityName;
+      $scope.apartmentList = Apartment.query({cityName: $scope.cityName});
     }]);

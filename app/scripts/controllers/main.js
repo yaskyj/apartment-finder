@@ -8,7 +8,7 @@
  * Controller of the zyringApp
  */
 angular.module('zyringApp')
-  .controller('MainCtrl',['$scope','$resource', function ($scope, $resource) {
+  .controller('MainCtrl',['$scope', function ($scope) {
       $scope.cities = [
         {
           name: 'Seattle',
