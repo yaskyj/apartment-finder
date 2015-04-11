@@ -8,7 +8,7 @@
  * Controller of the zyringApp
  */
 angular.module('zyringApp')
-  .controller('ApartmentCtrl', ['$scope', '$routeParams', 
-    function($scope, $routeParams) {
+  .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment'
+    function($scope, $routeParams, Apartment) {
       $scope.cityName = $routeParams.cityName;
     }]);
