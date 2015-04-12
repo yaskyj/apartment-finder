@@ -14,7 +14,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngTouch',
-    'uiGmapGoogleMapApiProvider'
+    'uiGmapgoogle-maps'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -34,10 +34,10 @@ angular
         redirectTo: '/'
       });
   })
-  .config(function (uiGmapGoogleMapApiProvider) {
-    uiGmapGoogleMapApiProvider.configure({
-      key: 'AIzaSyAfltuCM5AGdScNbvXCFPOgos-wpIeL6QA',
-      v: '3.17',
-      libraries: 'weather,geometry,visualization'
-    });
-  });
+  .config(['uiGmapGoogleMapApiProvider', function (GoogleMapApiProvider) {
+      GoogleMapApiProvider.configure({
+        key: 'AIzaSyAfltuCM5AGdScNbvXCFPOgos-wpIeL6QA',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+      });
+    }]);
