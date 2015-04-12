@@ -1,29 +1,50 @@
 <div class="container-fluid">
   <div class="row">
+    <div class="col-md-12 text-center">
+      <button class="btn btn-default" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+      </button>
+        {{currentPage+1}}/{{numberOfPages()}}
+      <button class="btn btn-default" ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+      </button>
+    </div>
+  </div>
+  <div class="row">
     <ul class="picture-list">
-      <div masonry>
-        <li class="masonry-brick" ng-repeat="apt in apartmentList">
-          <div class="col-md-4">
-            <div class="apartment">
-              <div class="apartment-pic">
-                <img class="image-responsive" ng-src="{{apt.thumbnail}}"/>
-                <div class="apartment-info">
-                  {{apt.floorplan}}
-                  <br>
-                  {{apt.price}}
-                  <br>
-                  {{apt.contact}}
+      <li class="masonry-brick" ng-repeat="apt in apartmentList | startFrom:currentPage*pageSize | limitTo: pageSize">
+        <div class="col-md-4">
+          <div class="apartment">
+            <div class="apartment-pic">
+              <img class="image-responsive" ng-src="{{apt.thumbnail}}"/>
+              <div class="apartment-info">
+                {{apt.floorplan}}
+                <br>
+                {{apt.price}}
+                <br>
+                {{apt.contact}}
               </div>
             </div>
-              <div class="apartment-text text-nowrap">
-                <a href="#">{{apt.title}}</a>
-                <div class="apartment-address">
-                  {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
-                </div>
+            <div class="apartment-text text-nowrap">
+              <a href="#">{{apt.title}}</a>
+              <div class="apartment-address">
+                {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
               </div>
+            </div>
           </div>
-        </li>
-      </div>
+        </div>
+      </li>
     </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button class="btn btn-default" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+      </button>
+        {{currentPage+1}}/{{numberOfPages()}}
+      <button class="btn btn-default" ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+      </button>
+    </div>
   </div>
 </div>
