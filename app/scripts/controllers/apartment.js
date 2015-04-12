@@ -7,8 +7,8 @@
  * Controller of the zyringApp
  */
 angular.module('zyringApp')
-  .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment',
-    function($scope, $routeParams, Apartment) {
+  .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment', 'uiGmapGoogleMapApi',
+    function($scope, $routeParams, Apartment, uiGmapGoogleMapApi) {
       $scope.cityName = $routeParams.cityName;
       $scope.apartmentList = Apartment.query({cityName: $scope.cityName});
       $scope.currentPage = 0;
@@ -16,6 +16,10 @@ angular.module('zyringApp')
       $scope.numberOfPages = function() {
         return Math.ceil($scope.apartmentList.length/$scope.pageSize);
       }
+
+      uiGmapGoogleMapApi.then(function(maps) {
+
+      });
   }]);
 
 angular.module('zyringApp')

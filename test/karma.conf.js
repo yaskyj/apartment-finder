@@ -39,6 +39,8 @@ module.exports = function(config) {
       'bower_components/imagesloaded/imagesloaded.js',
       'bower_components/angular-masonry/angular-masonry.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/lodash/dist/lodash.compat.js',
+      'bower_components/angular-google-maps/dist/angular-google-maps.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

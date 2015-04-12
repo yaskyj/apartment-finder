@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.angular-google-map-container { 
+  height: 400px; 
+}
+
 .picture-list {
   list-style-type: none;
 }
