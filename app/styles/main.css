@@ -84,14 +84,9 @@
   position: absolute;
 }
 
-.apt-info-text {
-  top: 50%;
-  position: absolute;
-}
-
 .apartment-text {
   padding: 10px 0;
-  position: absolute;
+  position: relative;
 }
 
 .apartment-address {

@@ -7,21 +7,19 @@
             <div class="apartment-pic">
               <img ng-src="{{apt.thumbnail}}"/>
               <div class="apartment-info">
-                <div>
                 {{apt.floorplan}}
                 <br>
                 {{apt.price}}
                 <br>
                 {{apt.contact}}
-              </div>
             </div>
+          </div>
             <div class="apartment-text text-nowrap">
               <a href="#">{{apt.title}}</a>
               <div class="apartment-address">
                 {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
               </div>
             </div>
-          </div>
         </div>
       </li>
     </ul>
