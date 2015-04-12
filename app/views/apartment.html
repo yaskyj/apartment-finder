@@ -1,27 +1,29 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <ul class="picture-list">
-      <li ng-repeat="apt in apartmentList">
-        <div class="col-md-4">
-          <div class="apartment">
-            <div class="apartment-pic">
-              <img ng-src="{{apt.thumbnail}}"/>
-              <div class="apartment-info">
-                {{apt.floorplan}}
-                <br>
-                {{apt.price}}
-                <br>
-                {{apt.contact}}
-            </div>
-          </div>
-            <div class="apartment-text text-nowrap">
-              <a href="#">{{apt.title}}</a>
-              <div class="apartment-address">
-                {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
+      <div masonry>
+        <li class="masonry-brick" ng-repeat="apt in apartmentList">
+          <div class="col-md-4">
+            <div class="apartment">
+              <div class="apartment-pic">
+                <img class="image-responsive" ng-src="{{apt.thumbnail}}"/>
+                <div class="apartment-info">
+                  {{apt.floorplan}}
+                  <br>
+                  {{apt.price}}
+                  <br>
+                  {{apt.contact}}
               </div>
             </div>
-        </div>
-      </li>
+              <div class="apartment-text text-nowrap">
+                <a href="#">{{apt.title}}</a>
+                <div class="apartment-address">
+                  {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
+                </div>
+              </div>
+          </div>
+        </li>
+      </div>
     </ul>
   </div>
 </div>

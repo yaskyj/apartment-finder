@@ -9,16 +9,15 @@
 .city {
   border: 10px solid #fff;  
   float: left;
-  width: 500px;
+  width: 100%;
   height: 375px;
   margin: 20px;
   overflow: hidden;
   position: relative;
-  box-shadow: 5px 5px 5px #111;
 }
 
 .city img {
-  width: 500px;
+  width: 100%;
   height: 375px;
   position: absolute;
 }
@@ -58,9 +57,9 @@
   width: 100%;  
 }
 
-.apartment-pic img{
-  height: 350px;
+.apartment-pic img {
   width: 100%;
+  height: 350px;
   overflow: hidden;
   position: absolute;
 }
