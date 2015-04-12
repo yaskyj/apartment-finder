@@ -16,10 +16,15 @@ angular.module('zyringApp')
       $scope.numberOfPages = function() {
         return Math.ceil($scope.apartmentList.length/$scope.pageSize);
       }
-
-      uiGmapGoogleMapApi.then(function(maps) {
-
-      });
+      $scope.map = { 
+        center: { 
+          latitude: 47.6, 
+          longitude: -122.3 
+        }, 
+        zoom: 8
+      };
+      // uiGmapGoogleMapApi.then(function(maps) {
+      // });
   }]);
 
 angular.module('zyringApp')
