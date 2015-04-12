@@ -14,7 +14,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngTouch',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
