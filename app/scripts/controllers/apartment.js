@@ -19,9 +19,9 @@ angular.module('zyringApp')
       $scope.map = { 
         center: { 
           latitude: 47.6, 
-          longitude: -122.3 
+          longitude: -122 
         }, 
-        zoom: 8
+        zoom: 10
       };
       // uiGmapGoogleMapApi.then(function(maps) {
       // });
