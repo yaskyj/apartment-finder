@@ -7,9 +7,15 @@
             <div class="apartment-pic">
               <img ng-src="{{apt.thumbnail}}"/>
               <div class="apartment-info">
+                <div>
+                {{apt.floorplan}}
+                <br>
+                {{apt.price}}
+                <br>
+                {{apt.contact}}
               </div>
             </div>
-            <div class="apartment-text">
+            <div class="apartment-text text-nowrap">
               <a href="#">{{apt.title}}</a>
               <div class="apartment-address">
                 {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
@@ -19,13 +25,5 @@
         </div>
       </li>
     </ul>
-<!--     <div class="col-md-12">
-      <h2>City: {{cityName}}</h2>
-      <ul>
-        <li ng-repeat="obj in apartmentList">
-          {{obj.title}}
-        </li>
-      </ul>
-    </div> -->
   </div>
 </div>

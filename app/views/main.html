@@ -10,12 +10,11 @@
   <div class="row">
     <ul class="picture-list">
         <li ng-repeat="city in cities">
-          <div class="col-md-6 cities">
-            <div class="pic">
+          <div class="col-md-6">
+            <div class="city">
               <img ng-src="{{city.imgUrl}}"/> 
               <div class="name-box">
                 <a ng-href="#/apartments/{{city.name}}" class="btn btn-default ghost-btn" role="button">{{city.name}}</a>
-                <!-- <a ng-href="#/apartments/{{city.name}}">{{city.name}}</a> -->
               </div>
             </div>
             <br>
