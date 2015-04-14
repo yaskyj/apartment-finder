@@ -14,6 +14,13 @@ var elementCounter = 0,
  * Controller of the zyringApp
  */
 angular.module('zyringApp')
+  .filter('startFrom', function() {
+    return function(input, start) {
+      start = +start;
+      console.log(start);
+      return input.slice(start);
+    }
+  })
   .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment', 'uiGmapGoogleMapApi',
     function($scope, $routeParams, Apartment, uiGmapGoogleMapApi) {
       $scope.cityName = $routeParams.cityName;
@@ -54,10 +61,4 @@ angular.module('zyringApp')
       }
   }]);
 
-angular.module('zyringApp')
-  .filter('startFrom', function() {
-    return function(input, start) {
-      start = +start;
-      return input.slice(start);
-    }
-  });
+// angular.module('zyringApp')
