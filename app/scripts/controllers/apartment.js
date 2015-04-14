@@ -3,7 +3,9 @@ var elementCounter = 0,
     pageNo = 0,
     maxSize = 9,
     checkCurrentApartments,
-    checkCurrentPage;
+    checkCurrentPage,
+    marker,
+    i;
 /**
  * @ngdoc function
  * @name zyringApp.controller:AboutCtrl
@@ -21,12 +23,7 @@ angular.module('zyringApp')
       $scope.numberOfPages = function() {
         return Math.ceil($scope.apartmentList.length/$scope.pageSize);
       }
-      if ($scope.apartmentList.length > 0) {
-        console.log($scope.apartmentList.slice(0, 10));
-      }
-      console.log($scope.apartmentList);
-      console.log($scope.apartmentList[0]);
-      $scope.currentApartments = $scope.currentPage === 0 ? $scope.apartmentList.slice(0, 10) : $scope.apartmentList.slice(($scope.currentPage*$scope.pageSize)+1, ($scope.currentPage*$scope.pageSize)+10);
+      $scope.currentApartments = $scope.currentPage === 0 ? $scope.apartmentList.slice(0, 10) : $scope.apartmentList.slice(($scope.currentPage*$scope.pageSize), ($scope.currentPage*$scope.pageSize)+$scope.pageSize);
       // checkCurrentPage = window.setInterval(console.log($scope.currentPage), 100);
       // checkCurrentApartments = window.setInterval(console.log($scope.currentApartments), 100);
       // $scope.pages = [];      
@@ -47,41 +44,14 @@ angular.module('zyringApp')
         zoom: 10
         // bound: {}
       };
-      // var createApartmentMarker = function(i, bounds, idKey) {
-      //   var lat_min = bounds.southwest.latitude,
-      //       lat_range = bounds.northeast.latitude - lat_min,
-      //       lng_min = bounds.southwest.longitude,
-      //       lng_range = bounds.northeast.longitude - lng_min;
 
-      //   if (idKey == null) {
-      //     idKey = "id";
-      //   }
-
-      //   var latitude = lat_min + (Math.random() * lat_range);
-      //   var longitude = lng_min + (Math.random() * lng_range);
-      //   var ret = {
-      //     latitude: latitude,
-      //     longitude: longitude,
-      //     title: 'm' + i
-      //   };
-      //   ret[idKey] = i;
-      //   return ret;
-      // };
-      // $scope.apartmentMarkers = [];
-      // $scope.$watch(function() {
-      //   return $scope.map.bounds;
-      //   }, function(nv, ov) {
-      //   // Only need to regenerate once
-      //   if (!ov.southwest && nv.southwest) {
-      //     var markers = [];
-      //     for (var i = 0; i < 50; i++) {
-      //       markers.push(createApartmentMarker(i, $scope.map.bounds))
-      //     }
-      //     $scope.randomMarkers = markers;
-      //   }
-      // }, true);
-      // uiGmapGoogleMapApi.then(function(maps) {
-      // });
+      for (i = 0; i < $scope.currentApartments.length; i++) {  
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
+          map: map,
+          title: $scope.currentApartments[i].title
+        })
+      }
   }]);
 
 angular.module('zyringApp')
