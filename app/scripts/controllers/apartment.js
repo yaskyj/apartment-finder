@@ -1,7 +1,9 @@
 'use strict';
 var elementCounter = 0,
     pageNo = 0,
-    maxSize = 9;
+    maxSize = 9,
+    checkCurrentApartments,
+    checkCurrentPage;
 /**
  * @ngdoc function
  * @name zyringApp.controller:AboutCtrl
@@ -19,23 +21,31 @@ angular.module('zyringApp')
       $scope.numberOfPages = function() {
         return Math.ceil($scope.apartmentList.length/$scope.pageSize);
       }
-      $scope.pages = [];      
-      for (var i = 0; i < $scope.numberOfPages; i++) {
-        $scope.pages.push([]);
-        console.log($scope.pages)
+      if ($scope.apartmentList.length > 0) {
+        console.log($scope.apartmentList.slice(0, 10));
       }
-      while (elementCounter < $scope.apartmentList.length) {
-        pageNo = parseInt(elementCounter/maxSize);
-        $scope.pages[pageNo].push($scope.apartmentList[elementCounter]);
-        elementCounter += 1;
-      }
+      console.log($scope.apartmentList);
+      console.log($scope.apartmentList[0]);
+      $scope.currentApartments = $scope.currentPage === 0 ? $scope.apartmentList.slice(0, 10) : $scope.apartmentList.slice(($scope.currentPage*$scope.pageSize)+1, ($scope.currentPage*$scope.pageSize)+10);
+      // checkCurrentPage = window.setInterval(console.log($scope.currentPage), 100);
+      // checkCurrentApartments = window.setInterval(console.log($scope.currentApartments), 100);
+      // $scope.pages = [];      
+      // for (var i = 0; i < $scope.numberOfPages; i++) {
+      //   $scope.pages.push([]);
+      //   console.log($scope.pages)
+      // }
+      // while (elementCounter < $scope.apartmentList.length) {
+      //   pageNo = parseInt(elementCounter/maxSize);
+      //   $scope.pages[pageNo].push($scope.apartmentList[elementCounter]);
+      //   elementCounter += 1;
+      // }
       $scope.map = { 
         center: { 
           latitude: 47.6, 
           longitude: -122 
         }, 
-        zoom: 10,
-        bound: {}
+        zoom: 10
+        // bound: {}
       };
       // var createApartmentMarker = function(i, bounds, idKey) {
       //   var lat_min = bounds.southwest.latitude,
@@ -74,10 +84,10 @@ angular.module('zyringApp')
       // });
   }]);
 
-// angular.module('zyringApp')
-//   .filter('startFrom', function() {
-//     return function(input, start) {
-//       start = +start;
-//       return input.slice(start);
-//     }
-//   });
+angular.module('zyringApp')
+  .filter('startFrom', function() {
+    return function(input, start) {
+      start = +start;
+      return input.slice(start);
+    }
+  });
