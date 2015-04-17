@@ -25,7 +25,7 @@
   </div> -->
   <div class="row">
     <ul class="picture-list">
-      <li class="masonry-brick" ng-repeat="apt in apartmentList | startFrom:currentPage*pageSize | limitTo: pageSize">
+      <li ng-repeat="apt in apartmentList">  <!-- | startFrom:currentPage*pageSize | limitTo: pageSize -->
         <div class="col-md-4">
           <div class="apartment">
             <div class="apartment-pic">

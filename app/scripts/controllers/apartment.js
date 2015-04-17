@@ -13,17 +13,19 @@ var elementCounter = 0,
  * # AboutCtrl
  * Controller of the zyringApp
  */
-apartmentFinder.filter('startFrom', function() {
-    return function(input, start) {
-      start = +start;
-      return input.slice(start);
-    }
-  } )
+apartmentFinder
   .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment', 'uiGmapGoogleMapApi',
     function($scope, $routeParams, Apartment, uiGmapGoogleMapApi) {
       $scope.cityName = $routeParams.cityName;
       Apartment.query({cityName: $scope.cityName}, function(data) {
         $scope.apartmentList = data;
+        // for (i = 0; i < $scope.currentApartments.length; i++) {  
+        //   marker = new google.maps.Marker({
+        //     position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
+        //     map: map,
+        //     title: $scope.currentApartments[i].title
+        //   })
+        // }
         // $scope.currentApartments = $scope.currentPage === 0 ? $scope.apartmentList.slice(0, 10) : $scope.apartmentList.slice(($scope.currentPage*$scope.pageSize), ($scope.currentPage*$scope.pageSize)+$scope.pageSize);
         // $scope.currentPage = 0;
         // $scope.pageSize = 9;
@@ -52,14 +54,11 @@ apartmentFinder.filter('startFrom', function() {
         zoom: 10
         // bound: {}
       };
-
-      for (i = 0; i < $scope.currentApartments.length; i++) {  
-        marker = new google.maps.Marker({
-          position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
-          map: map,
-          title: $scope.currentApartments[i].title
-        })
-      }
   }]);
-
+// .filter('startFrom', function() {
+//     return function(input, start) {
+//       start = +start;
+//       return input.slice(start);
+//     }
+//   })
 // angular.module('zyringApp')

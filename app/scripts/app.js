@@ -8,7 +8,8 @@
  *
  * Main module of the application.
  */
-var apartmentFinder = angular.module('apartmentFinder', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch', 'uiGmapgoogle-maps', 'ui.bootstrap']);
+var apartmentFinder = angular.module('apartmentFinder', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch', 'wu.masonry', 'uiGmapgoogle-maps', 'ui.bootstrap']);
+
 apartmentFinder.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
