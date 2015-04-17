@@ -19,6 +19,8 @@ apartmentFinder
       $scope.cityName = $routeParams.cityName;
       Apartment.query({cityName: $scope.cityName}, function(data) {
         $scope.apartmentList = data;
+        console.log(typeof _.chunk);
+        // $scope.apartmentChunk = _.chunk($scope.apartmentList, 9); 
         // for (i = 0; i < $scope.currentApartments.length; i++) {  
         //   marker = new google.maps.Marker({
         //     position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
