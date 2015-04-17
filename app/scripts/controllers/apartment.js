@@ -19,8 +19,8 @@ apartmentFinder
       $scope.cityName = $routeParams.cityName;
       Apartment.query({cityName: $scope.cityName}, function(data) {
         $scope.apartmentList = data;
-        console.log(typeof _.chunk);
-        // $scope.apartmentChunk = _.chunk($scope.apartmentList, 9); 
+        $scope.apartmentChunk = _.chunk($scope.apartmentList, 9);
+        console.log($scope.apartmentChunk[0]);
         // for (i = 0; i < $scope.currentApartments.length; i++) {  
         //   marker = new google.maps.Marker({
         //     position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
@@ -34,7 +34,6 @@ apartmentFinder
         // $scope.numberOfPages = function() {
         //   return Math.ceil($scope.apartmentList.length/$scope.pageSize);
         // }
-        console.log($scope.apartmentList);
       });
       // checkCurrentPage = window.setInterval(console.log($scope.currentPage), 100);
       // checkCurrentApartments = window.setInterval(console.log($scope.currentApartments), 100);
