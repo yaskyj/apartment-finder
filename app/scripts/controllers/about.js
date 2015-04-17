@@ -7,8 +7,7 @@
  * # AboutCtrl
  * Controller of the zyringApp
  */
-angular.module('zyringApp')
-  .controller('AboutCtrl', function ($scope) {
+apartmentFinder.controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

@@ -7,8 +7,7 @@
  * # MainCtrl
  * Controller of the zyringApp
  */
-angular.module('zyringApp')
-  .controller('MainCtrl',['$scope', function ($scope) {
+apartmentFinder.controller('MainCtrl',['$scope', function ($scope) {
       $scope.cities = [
         {
           name: 'Seattle',

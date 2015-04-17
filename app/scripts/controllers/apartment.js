@@ -13,8 +13,7 @@ var elementCounter = 0,
  * # AboutCtrl
  * Controller of the zyringApp
  */
-angular.module('zyringApp')
-  .filter('startFrom', function() {
+apartmentFinder.filter('startFrom', function() {
     return function(input, start) {
       start = +start;
       return input.slice(start);
@@ -23,13 +22,16 @@ angular.module('zyringApp')
   .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment', 'uiGmapGoogleMapApi',
     function($scope, $routeParams, Apartment, uiGmapGoogleMapApi) {
       $scope.cityName = $routeParams.cityName;
-      $scope.apartmentList = Apartment.query({cityName: $scope.cityName});
-      $scope.currentPage = 0;
-      $scope.pageSize = 9;
-      $scope.numberOfPages = function() {
-        return Math.ceil($scope.apartmentList.length/$scope.pageSize);
-      }
-      $scope.currentApartments = $scope.currentPage === 0 ? $scope.apartmentList.slice(0, 10) : $scope.apartmentList.slice(($scope.currentPage*$scope.pageSize), ($scope.currentPage*$scope.pageSize)+$scope.pageSize);
+      Apartment.query({cityName: $scope.cityName}, function(data) {
+        $scope.apartmentList = data;
+        // $scope.currentApartments = $scope.currentPage === 0 ? $scope.apartmentList.slice(0, 10) : $scope.apartmentList.slice(($scope.currentPage*$scope.pageSize), ($scope.currentPage*$scope.pageSize)+$scope.pageSize);
+        // $scope.currentPage = 0;
+        // $scope.pageSize = 9;
+        // $scope.numberOfPages = function() {
+        //   return Math.ceil($scope.apartmentList.length/$scope.pageSize);
+        // }
+        console.log($scope.apartmentList);
+      });
       // checkCurrentPage = window.setInterval(console.log($scope.currentPage), 100);
       // checkCurrentApartments = window.setInterval(console.log($scope.currentApartments), 100);
       // $scope.pages = [];      

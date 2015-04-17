@@ -1,5 +1,4 @@
-angular.module('zyringApp')
-  .factory('Apartment',[
+apartmentFinder.factory('Apartment',[
     '$resource',
     //myObj will be created by calling this function
     //and capturing its return value
