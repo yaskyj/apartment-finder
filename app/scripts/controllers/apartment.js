@@ -20,7 +20,15 @@ apartmentFinder
       Apartment.query({cityName: $scope.cityName}, function(data) {
         $scope.apartmentList = data;
         $scope.apartmentChunk = _.chunk($scope.apartmentList, 9);
-        console.log($scope.apartmentChunk[0]);
+        $scope.totalItems = $scope.apartmentList.length;
+        $scope.currentPage = 1;
+        $scope.currentApartments = $scope.apartmentChunk[$scope.currentPage];
+        $scope.pageChanged = function() {
+          $scope.currentApartments = $scope.apartmentChunk[$scope.currentPage];
+          console.log('Page changed to: ' + $scope.currentPage);
+        };
+
+        // console.log($scope.apartmentChunk[0]);
         // for (i = 0; i < $scope.currentApartments.length; i++) {  
         //   marker = new google.maps.Marker({
         //     position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),

@@ -23,9 +23,12 @@
       </button>
     </div>
   </div> -->
+  <div class="text-center">
+    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+  </div>
   <div class="row">
     <ul class="picture-list">
-      <li ng-repeat="apt in apartmentList">  <!-- | startFrom:currentPage*pageSize | limitTo: pageSize -->
+      <li ng-repeat="apt in currentApartments">  <!-- | startFrom:currentPage*pageSize | limitTo: pageSize -->
         <div class="col-md-4">
           <div class="apartment">
             <div class="apartment-pic">
