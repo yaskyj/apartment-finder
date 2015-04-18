@@ -10,31 +10,46 @@ var elementCounter = 0,
 apartmentFinder
   .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment', 'uiGmapGoogleMapApi',
     function($scope, $routeParams, Apartment, uiGmapGoogleMapApi) {
-      $scope.map = { 
-        center: { 
-          latitude: 47.6, 
-          longitude: -122 
-        }, 
-        zoom: 10
-        // bound: {}
-      };
       $scope.cityName = $routeParams.cityName;
       Apartment.query({cityName: $scope.cityName}, function(data) {
+        $scope.apartmentMarkers = [];
         $scope.apartmentList = data;
         $scope.apartmentChunk = _.chunk($scope.apartmentList, 9);
         $scope.totalItems = $scope.apartmentList.length;
         $scope.currentPage = 1;
         $scope.currentApartments = $scope.apartmentChunk[$scope.currentPage];
         $scope.maxSize = 5;
+        $scope.map = { 
+          center: { 
+            latitude: 47.6, 
+            longitude: -122 
+          }, 
+          zoom: 10
+          // bound: {}
+        };
+        marker = new google.maps.Marker({
+          id: $scope.currentApartments[0].id,
+          latitude: $scope.currentApartments[0].latitude,
+          longitude: $scope.currentApartments[0].longitude,
+          title: $scope.currentApartments[0].title
+        })
+        $scope.apartmentMarkers.push(marker);
+        // for (i = 0; i < $scope.currentApartments.length; i++) {  
+        //   marker = new google.maps.Marker({
+        //     position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
+        //     map: map,
+        //     title: $scope.currentApartments[i].title
+        //   })
+        // }
         $scope.pageChanged = function() {
           $scope.currentApartments = $scope.apartmentChunk[$scope.currentPage];
+          for (i = 0; i < $scope.currentApartments.length; i++) {  
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
+              map: map,
+              title: $scope.currentApartments[i].title
+            })
+          }
         };
-        for (i = 0; i < $scope.currentApartments.length; i++) {  
-          marker = new google.maps.Marker({
-            position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
-            map: map,
-            title: $scope.currentApartments[i].title
-          })
-        }
       });
   }]);
