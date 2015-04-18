@@ -22,33 +22,30 @@ apartmentFinder
         $scope.map = { 
           center: { 
             latitude: 47.6, 
-            longitude: -122 
+            longitude: -122.3 
           }, 
           zoom: 10
-          // bound: {}
         };
-        marker = new google.maps.Marker({
-          id: $scope.currentApartments[0].id,
-          latitude: $scope.currentApartments[0].latitude,
-          longitude: $scope.currentApartments[0].longitude,
-          title: $scope.currentApartments[0].title
-        })
-        $scope.apartmentMarkers.push(marker);
-        // for (i = 0; i < $scope.currentApartments.length; i++) {  
-        //   marker = new google.maps.Marker({
-        //     position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
-        //     map: map,
-        //     title: $scope.currentApartments[i].title
-        //   })
-        // }
+        for (i = 0; i < $scope.currentApartments.length; i++) {  
+          marker = new google.maps.Marker({
+            id: $scope.currentApartments[i].id,
+            latitude: $scope.currentApartments[i].latitude,
+            longitude: $scope.currentApartments[i].longitude,
+            title: $scope.currentApartments[i].title
+          })
+          $scope.apartmentMarkers.push(marker);          
+        }
         $scope.pageChanged = function() {
           $scope.currentApartments = $scope.apartmentChunk[$scope.currentPage];
+          $scope.apartmentMarkers = [];
           for (i = 0; i < $scope.currentApartments.length; i++) {  
             marker = new google.maps.Marker({
-              position: new google.maps.LatLng($scope.currentApartments[i].latitude, $scope.currentApartments[i].longitude),
-              map: map,
+              id: $scope.currentApartments[i].id,
+              latitude: $scope.currentApartments[i].latitude,
+              longitude: $scope.currentApartments[i].longitude,
               title: $scope.currentApartments[i].title
             })
+            $scope.apartmentMarkers.push(marker);          
           }
         };
       });
