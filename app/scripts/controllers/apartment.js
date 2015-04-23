@@ -31,8 +31,13 @@ apartmentFinder
             id: $scope.currentApartments[i].id,
             latitude: $scope.currentApartments[i].latitude,
             longitude: $scope.currentApartments[i].longitude,
-            title: $scope.currentApartments[i].title
+            title: $scope.currentApartments[i].title,
+            show: false
           })
+          marker.onClick = function() {
+            console.log("Clicked!");
+            marker.show = !marker.show;
+          }
           $scope.apartmentMarkers.push(marker);          
         }
         $scope.pageChanged = function() {
