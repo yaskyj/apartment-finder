@@ -32,6 +32,8 @@ apartmentFinder
             latitude: $scope.currentApartments[i].latitude,
             longitude: $scope.currentApartments[i].longitude,
             title: $scope.currentApartments[i].title,
+            price: $scope.currentApartments[i].price,
+            thumbnail: $scope.currentApartments[i].thumbnail,
             show: false
           })
           marker.onClick = function() {
@@ -43,14 +45,21 @@ apartmentFinder
         $scope.pageChanged = function() {
           $scope.currentApartments = $scope.apartmentChunk[$scope.currentPage];
           $scope.apartmentMarkers = [];
-          for (i = 0; i < $scope.currentApartments.length; i++) {  
+          for (i = 0; i < $scope.currentApartments.length; i++) {
             marker = new google.maps.Marker({
               id: $scope.currentApartments[i].id,
               latitude: $scope.currentApartments[i].latitude,
               longitude: $scope.currentApartments[i].longitude,
-              title: $scope.currentApartments[i].title
+              title: $scope.currentApartments[i].title,
+              price: $scope.currentApartments[i].price,
+              thumbnail: $scope.currentApartments[i].thumbnail,
+              show: false
             })
-            $scope.apartmentMarkers.push(marker);          
+            marker.onClick = function() {
+              console.log("Clicked!");
+              marker.show = !marker.show;
+            }
+            $scope.apartmentMarkers.push(marker);
           }
         };
       });

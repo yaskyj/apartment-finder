@@ -2,7 +2,11 @@
   <ui-gmap-google-map center='map.center' zoom='map.zoom'>
     <ui-gmap-markers models="apartmentMarkers" coords="'self'" icon="'icon'">
       <ui-gmap-windows show="show">
-        <div ng-non-bindable>{{title}}</div>
+        <div ng-non-bindable>
+          <img src="{{thumbnail}}"/>
+          <br>
+          {{title}}: {{price}}
+        </div>
       </ui-gmap-windows>
     </ui-gmap-markers>
   </ui-gmap-google-map>
