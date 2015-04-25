@@ -5,7 +5,7 @@
         <div ng-non-bindable>
           <img src="{{thumbnail}}"/>
           <br>
-          {{title}}: {{price}}
+            <a ng-href="#/apartment/{{id}}">{{title}}: {{price}}</a>
         </div>
       </ui-gmap-windows>
     </ui-gmap-markers>
@@ -30,7 +30,7 @@
               </div>
             </div>
             <div class="apartment-text text-nowrap">
-              <a href="#">{{apt.title}}</a>
+              <a ng-href="#/apartment/{{apt.id}}">{{apt.title}}</a>
               <div class="apartment-address">
                 {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
               </div>

@@ -24,6 +24,10 @@ apartmentFinder.config(function ($routeProvider) {
       templateUrl: 'views/apartment.html',
       controller: 'ApartmentCtrl'
     })
+    .when('/apartment/:id', {
+      templateUrl: 'views/oneapartment.html',
+      controller: 'OneApartmentCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
