@@ -5,7 +5,7 @@
         <div ng-non-bindable>
           <img src="{{thumbnail}}"/>
           <br>
-            <a ng-href="#/apartment/{{id}}">{{title}}: {{price}}</a>
+            <a href="#/apartment/{{id}}">{{title}}: {{price}}</a>
         </div>
       </ui-gmap-windows>
     </ui-gmap-markers>
@@ -18,24 +18,26 @@
     <ul class="picture-list">
       <li ng-repeat="apt in currentApartments">  <!-- | startFrom:currentPage*pageSize | limitTo: pageSize -->
         <div class="col-md-4">
-          <div class="apartment">
-            <div class="apartment-pic">
-              <img class="image-responsive" ng-src="{{apt.thumbnail}}"/>
-              <div class="apartment-info">
-                {{apt.floorplan}}
-                <br>
-                {{apt.price}}
-                <br>
-                {{apt.contact}}
+          <a href="#/apartment/{{apt.id}}">          
+            <div class="apartment">
+              <div class="apartment-pic">
+                <img class="image-responsive" ng-src="{{apt.thumbnail}}"/>
+                <div class="apartment-info">
+                  {{apt.floorplan}}
+                  <br>
+                  {{apt.price}}
+                  <br>
+                  {{apt.contact}}
+                </div>
+              </div>
+              <div class="apartment-text text-nowrap">
+                  {{apt.title}}
+                <div class="apartment-address">
+                  {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
+                </div>
               </div>
             </div>
-            <div class="apartment-text text-nowrap">
-              <a ng-href="#/apartment/{{apt.id}}">{{apt.title}}</a>
-              <div class="apartment-address">
-                {{apt.street}}, {{apt.city}}, {{apt.region}} {{apt.zip}} 
-              </div>
-            </div>
-          </div>
+          </a>
         </div>
       </li>
     </ul>
