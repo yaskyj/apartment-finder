@@ -95,3 +95,52 @@
 .apartment-address {
   font-size: .80em;
 }
+
+.apartment-main {
+  border-left: 20px solid orange;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.apartment-description {
+  border-left: 20px solid #2ecc71;
+  margin-bottom: 40px;
+  overflow: hidden; 
+}
+
+.apartment-pics {
+  border-left: 20px solid black;
+  margin-bottom: 40px;
+  overflow: hidden; 
+}
+
+.one-apartment-pic {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
+
+.one-apartment-pic img {
+  width: 100%;
+  /*height: 350px;*/
+  overflow: hidden;
+  position: absolute;
+}
+
+.apartment-special-features {
+  border-left: 20px solid orange;
+  margin-bottom: 40px;
+  overflow: hidden; 
+}
+
+.apartment-unit-features {
+  border-left: 20px solid blue;
+  margin-bottom: 40px;
+  overflow: hidden; 
+}
+
+.apartment-community-features {
+  border-left: 20px solid green;
+  margin-bottom: 40px;
+  overflow: hidden; 
+}
