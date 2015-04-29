@@ -1,15 +1,10 @@
 'use strict';
-var elementCounter = 0,
-    pageNo = 0,
-    maxSize = 9,
-    checkCurrentApartments,
-    checkCurrentPage,
-    marker,
-    i;
 
 apartmentFinder
-  .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment', 'uiGmapGoogleMapApi',
-    function($scope, $routeParams, Apartment, uiGmapGoogleMapApi) {
+  .controller('ApartmentCtrl', ['$scope', '$routeParams', 'Apartment',
+    function($scope, $routeParams, Apartment) {
+      var marker,
+          i;
       $scope.cityName = $routeParams.cityName;
       Apartment.query({cityName: $scope.cityName}, function(data) {
         $scope.apartmentMarkers = [];
@@ -35,11 +30,11 @@ apartmentFinder
             price: $scope.currentApartments[i].price,
             thumbnail: $scope.currentApartments[i].thumbnail,
             show: false
-          })
+          });
           marker.onClick = function() {
             console.log("Clicked!");
             marker.show = !marker.show;
-          }
+          };
           $scope.apartmentMarkers.push(marker);          
         }
         $scope.pageChanged = function() {
@@ -54,11 +49,11 @@ apartmentFinder
               price: $scope.currentApartments[i].price,
               thumbnail: $scope.currentApartments[i].thumbnail,
               show: false
-            })
+            });
             marker.onClick = function() {
               console.log("Clicked!");
               marker.show = !marker.show;
-            }
+            };
             $scope.apartmentMarkers.push(marker);
           }
         };
