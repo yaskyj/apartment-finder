@@ -16,10 +16,10 @@ apartmentFinder.config(function ($routeProvider) {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })
-    .when('/about', {
-      templateUrl: 'views/about.html',
-      controller: 'AboutCtrl'
-    })
+    //.when('/about', {
+    //  templateUrl: 'views/about.html',
+    //  controller: 'AboutCtrl'
+    //})
     .when('/apartments/:cityName', {
       templateUrl: 'views/apartment.html',
       controller: 'ApartmentCtrl'
