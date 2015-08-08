@@ -15,29 +15,6 @@ module.exports = function (grunt) {
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
-    //TODO: this server should be replaced by https://api.zyring.com:80
-    var serverAddress = 'https://api.zyring.com';
-    var clientID = 'justin_rogers';
-    var socket = require('socket.io-client')(serverAddress);
-    socket.on('connect', function () {
-        console.log('Zyring client connected to the server');
-        socket.on('handshake', function (data) {
-            if (data && data.appName === 'zyring') {
-                console.log('handshake with server was successfull');
-                socket.emit('activity',
-                    {
-                        userID: clientID,
-                        type: 'appLaunched',
-                        timestamp: Date()
-                    }
-                );
-            } else {
-                socket.emit('error', {label: 'something went wrong during handshake'});
-            }
-        });
-    });
-
-
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
@@ -396,33 +373,6 @@ module.exports = function (grunt) {
             }
         }
     });
-
-    /**
-     * Notify the Zyring server of the events in the dev environment
-     */
-    grunt.event.on('watch', function (action, filepath, target) {
-        console.log(target + ': ' + filepath + ' has ' + action);
-
-        // We should do most of the calculations on Memol to lower the pressure on the server
-        // For example, to know what file type was changed (html, css, js, ...) we analyze the filepath
-        // and the set the right property on the data sending via socket
-
-        var fileType = filepath.substring(filepath.lastIndexOf('.') + 1);
-        var fileName = filepath.substring(filepath.lastIndexOf('/') + 1);
-
-        var activity = {
-            type: action,
-            fileType: fileType,
-            fileName: fileName,
-            userID: clientID,
-            timestamp: Date()
-        };
-
-
-        socket.emit('activity', activity);
-
-    });
-
 
     grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
         if (target === 'dist') {
