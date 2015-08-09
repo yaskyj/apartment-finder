@@ -190,7 +190,7 @@ module.exports = function (grunt) {
                 src: [
                     '<%= yeoman.dist %>/scripts/{,*/}*.js',
                     '<%= yeoman.dist %>/styles/{,*/}*.css',
-                    '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                    //'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.dist %>/styles/fonts/*'
                 ]
             }
@@ -220,6 +220,11 @@ module.exports = function (grunt) {
             html: ['<%= yeoman.dist %>/{,*/}*.html'],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
             options: {
+                patterns: {
+                    js: [
+                        [/<img[^\>]*[^\>\S]+ng-src=['"]([^'"\)#]+)(#.+)?["']/gm, 'Update the HTML with non standard ng-src attribute on img']
+                    ]
+                },
                 assetsDirs: [
                     '<%= yeoman.dist %>',
                     '<%= yeoman.dist %>/images',

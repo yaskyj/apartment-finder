@@ -11,27 +11,27 @@ apartmentFinder.controller('MainCtrl',['$scope', function ($scope) {
       $scope.cities = [
         {
           name: 'Seattle',
-          imgUrl: '../images/seattle.jpg'
+          imgUrl: '/images/seattle.jpg'
         },
         {
           name: 'Redmond',
-          imgUrl: '../images/redmond.jpg'
+          imgUrl: '/images/redmond.jpg'
         },
         {
           name: 'Bellevue',
-          imgUrl: '../images/bellevue.jpg'
+          imgUrl: '/images/bellevue.jpg'
         },
         {
           name: 'Kirkland',
-          imgUrl: '../images/kirkland.jpg'
+          imgUrl: '/images/kirkland.jpg'
         },
         {
           name: 'Tacoma',
-          imgUrl: '../images/tacoma.jpg'
+          imgUrl: '/images/tacoma.jpg'
         },
         {
           name: 'Olympia',
-          imgUrl: '../images/olympia.jpg'
+          imgUrl: '/images/olympia.jpg'
         }
       ];
   
